@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="css/master.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+     /* Set the size of the div element that contains the map */
+     #map {
+       height: 400px;  /* The height is 400 pixels */
+       width: 100%;  /* The width is the width of the web page */
+      }
+   </style>
   </head>
   <body>
 
@@ -20,8 +27,8 @@
 
       <div class="collapse navbar-collapse  " id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto ">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a>
+          <li class="nav-item ">
+            <a class="nav-link" href="index.html">Anasayfa </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about2.html">Hakkımızda</a>
@@ -32,8 +39,8 @@
           <li class="nav-item">
             <a class="nav-link" href="https://goo.gl/forms/sThanv0NSkbyJMJp1">Servis Formu</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">İletişim</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.html">İletişim<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -64,37 +71,37 @@
     </div>
   </div>
 </div>
-
-  <!-----Columns-------->
-  <div class="row infoRow">
+<div id="map"></div>
+<div class="jumbotron">
+  <div class="row">
     <div class="col-sm-4">
-      <a href="about2.html">
-      <div class="infoElement">
-        <h4><i class="fa fa-envelope"></i> HABERLER VE YENİLİKLER</h4>
-        <img src="img/81bd1ff1a4.png" class="img-fluid" width="300" alt="">
-        <h5>Wilo Teknik Servis</h5>
-        <p class=" text-center"style="max-width: 400px;">AYKAN TEKNİK SERVİS 2007 YILINDA KURULMUŞ OLUP,  “WILO…</p>
-      </div>
-      </a>
+      <h1>Telefon Numaralarımız:</h1>
+      <h4>
+      0 262 323 15 23
+    <br>
+    0 555 998 39 14
+    <br>
+    0 544 235 36 65
+  </h4>
     </div>
     <div class="col-sm-4">
-      <div class="infoElement">
-        <h4><i class="fa fa-phone"></i> SERVİS İSTEK</h4>
-        <img src="img/3dce37e08b-300x71.png"class="img-fluid" width="300" alt="">
-        <h3>0262 323 15 23</h3>
-        <br>
-        <a href="https://goo.gl/forms/sThanv0NSkbyJMJp1"> <button type="button" class="btn btn-big btn-info" name="button">İstek Formu</button> </a>
-      </div>
+      <h1>E-Mail Adreslerimiz:</h1>
+      <h4>
+      info@aykanteknik.com
+<br>
+sedataykan@aykanteknik.com
+<br>
+ugurduman@aykanteknik.com
+</h4>
     </div>
     <div class="col-sm-4">
-      <div class="infoElement">
-        <h4><i class="fa fa-shopping-cart"></i> ÜRÜNLER</h4>
-        <img src="img/Capture.png"class="img-fluid" width="300" alt="">
-        <br><br>
-        <a href="http://productfinder.wilo.com/tr/tr/Wilo/home.html"> <button type="button" class="btn btn-big btn-info" name="button">Tüm Ürünler</button></a>
-      </div>
+      <h1>Adres:</h1>
+      <h4>Yenişehir Mahallesi, No: İzmit/Kocaeli, Turan Güneş Cd. No:503 İzmit/KOCAELİ</h4>
     </div>
   </div>
+</div>
+
+
   <!--------Footer--------->
   <div class="footer">
     <div class="row">
@@ -121,4 +128,16 @@
   </body>
   <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script>
+function initMap() {
+var uluru = {lat: 40.777343, lng: 29.966820};
+var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 16, center: uluru});
+var marker = new google.maps.Marker({position: uluru, map: map});
+}
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8suVeU5FmVnQoo8C3g6idxYeIZsCoy5E&callback=initMap">
+  </script>
+
 </html>
